@@ -2,10 +2,10 @@
 # Discord Level Card
 
 
-[![NPM Version](https://img.shields.io/npm/v/discord-welcome-card?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/discord-welcome-card)
-[![NPM Downloads](https://img.shields.io/npm/dt/discord-welcome-card?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/discord-welcome-card)
-[![NPM License](https://img.shields.io/npm/l/discord-welcome-card?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/discord-welcome-card)
-[![Github Size](https://img.shields.io/github/repo-size/AKORA-Studios/DiscordWelcomeCard?color=00DEC8&label=SIZE&style=for-the-badge)](https://www.npmjs.com/package/discord-welcome-card)
+[![NPM Version](https://img.shields.io/npm/v/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
+[![NPM Downloads](https://img.shields.io/npm/dt/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
+[![NPM License](https://img.shields.io/npm/l/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
+[![Github Size](https://img.shields.io/github/repo-size/discord-card/levelcard?color=00DEC8&label=SIZE&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
 
 **[![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)**
 
@@ -16,7 +16,7 @@ Simple Levelup cards
 
 ```javascript
 const Discord = require("discord.js");
-const { levelupCard } = require('discord-welcome-card');
+const { levelupCard } = require('@discord-card/levelcard');
 const client = new Discord.Client();
 
 client.on("message", async message => {
