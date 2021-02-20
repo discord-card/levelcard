@@ -11,8 +11,6 @@ declare global {
         height: number; h: number;
 
         roundRect(x: number, y: number, w: number, h: number, r: number): this
-        changeFont(font: string): this
-        changeFontSize(size: string): this
         blur(strength: number): this
     }
 }
@@ -30,12 +28,6 @@ ctx2D.prototype.roundRect = function (x, y, w, h, r) {
     return this;
 }
 
-
-ctx2D.prototype.changeFontSize = function (size) {
-    var fontArgs = this.font.split(' ');
-    this.font = size + ' ' + fontArgs.slice(1).join(' '); /// using the last part
-    return this;
-}
 
 ctx2D.prototype.blur = function (strength = 1) {
     this.globalAlpha = 0.5; // Higher alpha made it more smooth
@@ -58,16 +50,7 @@ ctx2D.prototype.blur = function (strength = 1) {
     return this;
 }
 
-
-
-
 const root = join(__dirname, 'images')
-
-
-function getFontSize(str: string) {
-    if (str.length < 18) return 30;
-    return (600 * Math.pow(str.length, -1.05)).toFixed(0);
-}
 
 export type ModuleFunction = (ctx: ctx2D) => any
 export type CardOptions = {
@@ -131,7 +114,6 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 
     var temp: Canvas | Image = background;
     if (options.blur) {
-        console.log('Q');
         var blur = createCanvas(w, h), blur_ctx = blur.getContext('2d') as ctx2D;
         blur_ctx.drawImage(background, 0, 0, w, h);
 
@@ -158,7 +140,7 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
-    ctx.fillText(options.level.toString(), 700 / 1.15, 100 / 1.5);
+    ctx.fillText(options.level.toString(), ctx.width / 1.15, 100 / 1.5);
 
     //Avatar Image
     const radius = h / 2.5;
