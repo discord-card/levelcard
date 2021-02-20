@@ -162,7 +162,7 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 }
 
 
-export async function levelcard(member: GuildMember, opts: CardOptions = {}): Promise<Buffer> {
+export async function levelupCard(member: GuildMember, opts: CardOptions = {}): Promise<Buffer> {
     opts.username = member.user.tag ? member.user.tag : '{username}'
     opts.level = opts.level ? opts.level : 0
     opts.avatar = opts.avatar ?? await loadImage(member.user.displayAvatarURL({ format: 'png' }));
