@@ -9,6 +9,7 @@ examples
 #Developement
 src/index.ts
 src/index.d.ts.map
+src/index.js.map
 package-lock.json
 tsconfig.json
 
