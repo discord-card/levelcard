@@ -1,0 +1,15 @@
+# Folders
+node_modules
+testing
+.vscode
+
+# Only important for git
+examples
+
+#Developement
+.ts
+!.d.ts
+package-lock.json
+tsconfig.json
+.gitignore
+.gitattributes
