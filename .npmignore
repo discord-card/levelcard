@@ -7,9 +7,11 @@ testing
 examples
 
 #Developement
-.ts
-!.d.ts
+src/index.ts
+src/index.d.ts.map
 package-lock.json
 tsconfig.json
+
+#Git
 .gitignore
 .gitattributes

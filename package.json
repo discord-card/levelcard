@@ -1,27 +1,33 @@
 {
-    "name": "discord-level-card",
-    "version": "3.7.2",
-    "description": "DiscordLevelup Card",
-    "main": "index.js",
-    "types": "index.d.ts",
-    "scripts": {
-        "start": "node src/index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    "name": "@discord-card/levelcard",
+    "version": "3.7.3",
+    "description": "Discord Leveling Cards",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
     "keywords": [
         "discord",
         "canvas",
-        "levelcard"
+        "welcome",
+        "goodbye",
+        "greeting"
     ],
-    "author": "dragoncat4012",
+    "author": "discord-card",
     "license": "Apache License",
     "dependencies": {
         "canvas": "^2.6.1",
+<<<<<<< Updated upstream
         "fs": "0.0.1-security"
     },
     "repository": {
         "type": "git",
         "url": "git://github.com/discord-card/levelcard"
+=======
+        "@discord-card/core": "^1.1.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/discord-card/levelcard.git"
+>>>>>>> Stashed changes
     },
     "devDependencies": {
         "@types/node": "^14.14.22",
