@@ -50,7 +50,7 @@ ctx2D.prototype.blur = function (strength = 1) {
     return this;
 }
 
-const root = join(__dirname, 'images')
+const root = join(__dirname, '..', 'images');
 
 export type ModuleFunction = (ctx: ctx2D) => any
 export type CardOptions = {
@@ -146,15 +146,15 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     const radius = h / 2.5;
     ctx.lineWidth = 6
     ctx.beginPath();
-    ctx.arc(h / 2, h / 2, radius, 0, Math.PI * 2, true);
+    ctx.arc(ctx.height / 2, ctx.height / 2, 40, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.clip();
 
     if (options.avatar) {
         if (options.avatar instanceof Canvas || options.avatar instanceof Image)
-            ctx.drawImage(options.avatar, 5, 5, ctx.height / 2, ctx.height / 2);
+            ctx.drawImage(options.avatar, 5, 5, ctx.height, ctx.height);
         else if (typeof options.avatar === 'string' || options.avatar instanceof Buffer)
-            ctx.drawImage(await loadImage(options.avatar), radius / 4, radius / 4, radius * 2, radius * 2);
+            ctx.drawImage(await loadImage(options.avatar), 5, 5, ctx.height, ctx.height);
         else throw new Error('Invalid Avatar Argument');
     }
     snap(canvas);

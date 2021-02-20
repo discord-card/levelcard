@@ -1,7 +1,6 @@
 
 # Discord Level Card
 
-
 [![NPM Version](https://img.shields.io/npm/v/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
 [![NPM Downloads](https://img.shields.io/npm/dt/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
 [![NPM License](https://img.shields.io/npm/l/@discord-card/levelcard?color=00DEC8&style=for-the-badge)](https://www.npmjs.com/package/@discord-card/levelcard)
@@ -34,6 +33,7 @@ client.login('Your-Bot-Token');
 ##  Changelog
 | Version  | Content |
 | ------------- | ------------- |
-| 1.0 | new card background  |
+| 3.7.5 | new card background  |
+| 3.7.6 | fixing avatar  |
 
 
