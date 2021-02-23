@@ -41,7 +41,8 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 
     //Background
     snap(canvas);
-    if (options.rounded) ctx.roundRect(0, 0, w, h, h / 15);
+    const rounding = h / 7;
+    if (options.rounded) ctx.roundRect(0, 0, w, h, rounding);
     else ctx.rect(0, 0, w, h);
     ctx.clip();
 
@@ -57,16 +58,16 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 
 
     snap(canvas);
-    //Rounded Edges
+    //#region Rounded Edges
     if (options.border) {
-        if (options.rounded) ctx.roundRect(b, b, w - 2 * b, h - 2 * b, h / 15);
+        if (options.rounded) ctx.roundRect(b, b, w - 2 * b, h - 2 * b, rounding);
         else ctx.rect(b, b, w - (2 * b), h - (2 * b));
         ctx.clip();
     } else {
-        if (options.rounded) ctx.roundRect(0, 0, w, h, h / 15).clip();
+        if (options.rounded) ctx.roundRect(0, 0, w, h, rounding).clip();
         else ctx.rect(0, 0, w, h);
     }
-
+    ////#endregion Rounded Edges
 
     var temp: Canvas | Image = background;
     if (options.blur) {
@@ -85,20 +86,25 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     snap(canvas);
 
 
-    //Setting Styles
+    //Setting basic Styles
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
 
-    //Title
+    //Drawing the username
     ctx.fillText(options.username, ctx.width / 5, ctx.height / 1.5);
 
+    /**
+     * Drawing the Level
+     */
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
     ctx.fillText(options.level.toString(), ctx.width / 1.15, 100 / 1.5);
 
-    //Avatar Image
+    /**
+     * Drawing the avatar Image
+     */
     const radius = h / 2.5;
     ctx.lineWidth = 6
     ctx.beginPath();
