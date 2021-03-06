@@ -32,7 +32,6 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     ctx.h = ctx.height = h;
 
     var background: Image;
-
     try {
         background = await loadImage(join(root, 'levelcard.png'));
     } catch (e) { throw new Error('Invalid Path or Buffer provided.') }
@@ -91,18 +90,17 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     ctx.font = '45px ' + 'sans-serif';
 
     //Title
-    ctx.fillText(options.username, ctx.width / 5, ctx.height / 1.5);
+    ctx.fillText(options.username, ctx.width / 5.5, ctx.height / 1.5);
 
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
-    ctx.fillText(options.level.toString(), ctx.width / 1.15, 100 / 1.5);
+    ctx.fillText(options.level.toString(), ctx.width / 1.1, 100 / 1.5);
 
-    //Avatar Image
     const radius = h / 2.5;
     ctx.lineWidth = 6
     ctx.beginPath();
-    ctx.arc(ctx.height / 2, ctx.height / 2, 40, 0, Math.PI * 2, true);
+    ctx.arc(ctx.height / 1.5, ctx.height / 1.5, 40, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.clip();
 
