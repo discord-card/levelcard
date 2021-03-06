@@ -32,7 +32,6 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     ctx.h = ctx.height = h;
 
     var background: Image;
-
     try {
         background = await loadImage(join(root, 'levelcard.png'));
     } catch (e) { throw new Error('Invalid Path or Buffer provided.') }
@@ -41,8 +40,7 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 
     //Background
     snap(canvas);
-    const rounding = h / 7;
-    if (options.rounded) ctx.roundRect(0, 0, w, h, rounding);
+    if (options.rounded) ctx.roundRect(0, 0, w, h, h / 15);
     else ctx.rect(0, 0, w, h);
     ctx.clip();
 
@@ -58,16 +56,16 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
 
 
     snap(canvas);
-    //#region Rounded Edges
+    //Rounded Edges
     if (options.border) {
-        if (options.rounded) ctx.roundRect(b, b, w - 2 * b, h - 2 * b, rounding);
+        if (options.rounded) ctx.roundRect(b, b, w - 2 * b, h - 2 * b, h / 15);
         else ctx.rect(b, b, w - (2 * b), h - (2 * b));
         ctx.clip();
     } else {
-        if (options.rounded) ctx.roundRect(0, 0, w, h, rounding).clip();
+        if (options.rounded) ctx.roundRect(0, 0, w, h, h / 15).clip();
         else ctx.rect(0, 0, w, h);
     }
-    ////#endregion Rounded Edges
+
 
     var temp: Canvas | Image = background;
     if (options.blur) {
@@ -86,29 +84,23 @@ export async function drawCard(options: CardOptions): Promise<Buffer> {
     snap(canvas);
 
 
-    //Setting basic Styles
+    //Setting Styles
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
 
-    //Drawing the username
-    ctx.fillText(options.username, ctx.width / 5, ctx.height / 1.5);
+    //Title
+    ctx.fillText(options.username, ctx.width / 5.5, ctx.height / 1.5);
 
-    /**
-     * Drawing the Level
-     */
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#ffffff';
     ctx.font = '45px ' + 'sans-serif';
-    ctx.fillText(options.level.toString(), ctx.width / 1.15, 100 / 1.5);
+    ctx.fillText(options.level.toString(), ctx.width / 1.1, 100 / 1.5);
 
-    /**
-     * Drawing the avatar Image
-     */
     const radius = h / 2.5;
     ctx.lineWidth = 6
     ctx.beginPath();
-    ctx.arc(ctx.height / 2, ctx.height / 2, 40, 0, Math.PI * 2, true);
+    ctx.arc(ctx.height / 1.5, ctx.height / 1.5, 40, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.clip();
 
