@@ -3,8 +3,10 @@ node_modules
 testing
 .vscode
 
-# Only important for git
+#Only important for git repo
 examples
+CHANGELOG.md
+
 
 #Developement
 **/index.ts
@@ -12,6 +14,7 @@ examples
 *.map
 package-lock.json
 tsconfig.json
+CHANGELOG.md
 
 #Git
 .gitignore

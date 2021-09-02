@@ -29,12 +29,3 @@ client.login('Your-Bot-Token');
 ![Image](examples/card1.png)
 
 <br />
-
-##  Changelog
-| Version  | Content |
-| ------------- | ------------- |
-| 3.7.5 | new card background  |
-| 3.7.6 | fixing avatar  |
-| 3.7.9 | fixing avatar  |
-
-
