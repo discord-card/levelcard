@@ -7,15 +7,14 @@
     "keywords": [
         "discord",
         "canvas",
-        "welcome",
-        "goodbye",
-        "greeting"
+        "levelcard",
+        "rankkard"
     ],
     "author": "discord-card",
     "license": "Apache License",
     "dependencies": {
         "@discord-card/core": "^1.1.1",
-        "canvas": "^2.6.1"
+        "canvas": "^2.8.0"
     },
     "repository": {
         "type": "git",
