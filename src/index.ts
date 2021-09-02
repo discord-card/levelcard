@@ -168,7 +168,7 @@ async function drawCardRank(options: RankCardOptions): Promise<Buffer> {
 
     var background: Image;
     try {
-        background = await loadImage(join(root, 'code.png'));
+        background = await loadImage(join(root, 'dark.png'));
     } catch (e) { throw new Error('Invalid Path or Buffer provided.') }
 
     const b = 10; //Border
