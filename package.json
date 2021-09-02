@@ -1,6 +1,6 @@
 {
     "name": "@discord-card/levelcard",
-    "version": "3.7.8",
+    "version": "3.7.9",
     "description": "Discord Leveling Cards",
     "main": "src/index.js",
     "types": "src/index.d.ts",

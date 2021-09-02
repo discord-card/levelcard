@@ -35,5 +35,6 @@ client.login('Your-Bot-Token');
 | ------------- | ------------- |
 | 3.7.5 | new card background  |
 | 3.7.6 | fixing avatar  |
+| 3.7.9 | fixing avatar  |
 
 
