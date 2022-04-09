@@ -1,21 +1,21 @@
-# Folders
-node_modules
-testing
-.vscode
-
-#Only important for git repo
+# Only important for git repo
 examples
-CHANGELOG.md
-
+USAGE.md
 
 #Developement
-**/index.ts
+node_modules/
+test/
+.vscode/
+src/**/*.ts
+*.tgz
 *.map
-*.map
+.prettierrc
+tsconfig.tsbuildinfo
+
 package-lock.json
 tsconfig.json
-CHANGELOG.md
 
 #Git
 .gitignore
 .gitattributes
+.github
