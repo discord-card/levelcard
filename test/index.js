@@ -32,28 +32,3 @@ console.log('start');
   writeFileSync(join(root, 'rank.png'), rank);
   console.log('Rank');
 })();
-
-/*
-client.on('ready', async () => {
-    console.log(`Logged in as: ${client.user.tag}`);
-});
-
-
-
-client.on('message', async (msg) => {
-    if (!Object.keys(themes).includes(msg.content)) return;
-    const theme = themes[msg.content];
-    theme.image = 'qwq.png'
-    var card = await drawCard(msg.member, theme, ['welcomeText', 'userText', 'avatarImg'])
-
-    //var buff = card.toBuffer("image/png");
-
-    //writeFileSync('./owo.png', card.attachment);
-    //console.log(card)
-
-    msg.channel.send(new MessageAttachment(card))
-    //msg.channel.send(card.toString())
-})
-*/
-//client.login(config.token);
-//client.login('Nzg3MDY4MzAwNzg5NDE1OTY3.X9PkeQ._lx9yWc2agVYggyja76fNaW08A4');
