@@ -15,7 +15,7 @@
     "license": "Apache License",
     "dependencies": {
         "@discord-card/core": "^1.1.1",
-        "canvas": "^2.6.1"
+        "canvas": "^3.0.0"
     },
     "repository": {
         "type": "git",
